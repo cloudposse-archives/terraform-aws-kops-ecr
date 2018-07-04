@@ -1,0 +1,86 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name: terraform-aws-kops-ecr
+
+# Logo for this project
+#logo: docs/logo.png
+
+# License of this project
+license: "APACHE2"
+
+# Canonical GitHub repo
+github_repo: cloudposse/terraform-aws-kops-ecr
+
+# Badges to display
+badges:
+  - name: "Build Status"
+    image: "https://travis-ci.org/cloudposse/terraform-aws-kops-ecr.svg?branch=master"
+    url: "https://travis-ci.org/cloudposse/terraform-aws-kops-ecr"
+  - name: "Latest Release"
+    image: "https://img.shields.io/github/release/cloudposse/terraform-aws-kops-ecr.svg"
+    url: "https://travis-ci.org/cloudposse/terraform-aws-kops-ecr/releases"
+  - name: "Slack Community"
+    image: "https://slack.cloudposse.com/badge.svg"
+    url: "https://slack.cloudposse.com"
+
+related:
+  - name: "terraform-aws-ecr"
+    description: "Terraform Module to manage Docker Container Registries on AWS ECR"
+    url: "https://github.com/cloudposse/terraform-aws-ecr"
+  - name: "terraform-aws-jenkins"
+    description: "Terraform module to build Docker image with Jenkins, save it to an ECR repo, and deploy to Elastic Beanstalk running Docker stack"
+    url: "https://github.com/cloudposse/terraform-aws-jenkins"
+
+# Short description of this project
+description: |-
+  Terraform module to provision an ECR repository and grant users and kubernetes nodes access to it.
+
+  ## Overview
+
+  The module uses [terraform-aws-kops-metadata](https://github.com/cloudposse/terraform-aws-kops-metadata) to lookup resources within a Kops cluster for easier integration with Terraform.
+
+# How to use this project
+usage: |-
+  ```hcl
+  module "cicd_user" {
+    source    = "git::https://github.com/cloudposse/terraform-aws-iam-system-user.git?ref=tags/0.3.0"
+    namespace = "${var.namespace}"
+    stage     = "${var.stage}"
+    name      = "codefresh"
+
+    tags = {
+      Cluster = "${var.kops_cluster_name}"
+    }
+  }
+
+  module "kops_ecr_app" {
+    source       = "git::https://github.com/cloudposse/terraform-aws-kops-ecr.git?ref=tags/0.1.0"
+    namespace    = "${var.namespace}"
+    stage        = "${var.stage}"
+    name         = "app"
+    cluster_name = "${var.kops_cluster_name}"
+
+    users = [
+      "${module.cicd_user.user_name}"
+    ]
+
+    tags = {
+      Cluster = "${var.kops_cluster_name}"
+    }
+  }
+
+  ```
+
+include:
+  - "docs/targets.md"
+  - "docs/terraform.md"
+
+# Contributors to this project
+contributors:
+  - name: "Igor Rodionov"
+    github: "goruha"
