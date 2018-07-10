@@ -2,7 +2,7 @@
 
 [![Cloud Posse](https://cloudposse.com/logo-300x69.svg)](https://cloudposse.com)
 
-# terraform-aws-kops-ecr [![Build Status](https://travis-ci.org/cloudposse/terraform-aws-kops-ecr.svg?branch=master)](https://travis-ci.org/cloudposse/terraform-aws-kops-ecr) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
+# terraform-aws-kops-ecr [![Build Status](https://travis-ci.org/cloudposse/terraform-aws-kops-ecr.svg?branch=master)](https://travis-ci.org/cloudposse/terraform-aws-kops-ecr) [![Latest Release](https://img.shields.io/github/release/cloudposse/terraform-aws-kops-ecr.svg)](https://github.com/cloudposse/terraform-aws-kops-ecr/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
 
 
 Terraform module to provision an ECR repository and grant users and kubernetes nodes access to it.
