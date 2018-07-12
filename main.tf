@@ -1,5 +1,5 @@
 module "label" {
-  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.3.3"
+  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.3.7"
   namespace  = "${var.namespace}"
   stage      = "${var.stage}"
   name       = "${var.name}"
@@ -16,7 +16,7 @@ module "kops_metadata" {
 }
 
 module "kops_ecr" {
-  source    = "git::https://github.com/cloudposse/terraform-aws-ecr.git?ref=tags/0.2.6"
+  source    = "git::https://github.com/cloudposse/terraform-aws-ecr.git?ref=tags/0.2.8"
   name      = "${var.name}"
   namespace = "${var.namespace}"
   stage     = "${var.stage}"
