@@ -23,6 +23,11 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
 
 
+
+
+
+
+
 ## Usage
 
 ```hcl
@@ -75,14 +80,14 @@ Available targets:
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | attributes | Additional attributes (e.g. `1`) | list | `<list>` | no |
-| cluster_name | Kops cluster name (e.g. `us-east-1.cloudposse.com` or `cluster-1.cloudposse.com`) | string | - | yes |
+| cluster_name | Kops cluster name (e.g. `us-west-2.cloudposse.co` or `cluster-1.cloudposse.co`) | string | - | yes |
 | delimiter | Delimiter to be used between `namespace`, `stage`, `name` and `attributes` | string | `-` | no |
 | masters_name | Kops masters subdomain name in the cluster DNS zone | string | `masters` | no |
-| name | Name (e.g. `external-dns`) | string | `external-dns` | no |
+| name | Name (e.g. `external-dns`) | string | - | yes |
 | namespace | Namespace (e.g. `cp` or `cloudposse`) | string | - | yes |
 | nodes_name | Kops nodes subdomain name in the cluster DNS zone | string | `nodes` | no |
 | stage | Stage (e.g. `prod`, `dev`, `staging`) | string | - | yes |
-| tags | Additional tags (e.g. map(`Cluster`,`us-east-1.cloudposse.com`) | map | `<map>` | no |
+| tags | Additional tags (e.g. map(`Cluster`,`us-west-2.cloudposse.co`) | map | `<map>` | no |
 | users | User names to grant permissions | list | `<list>` | no |
 
 ## Outputs
@@ -91,9 +96,9 @@ Available targets:
 |------|-------------|
 | registry_id | Registry ID |
 | registry_url | Registry URL |
-| repository_name | Registry name |
-| role_arn | Assume Role ARN to get access registry |
-| role_name | Assume Role name to get access registry |
+| repository_name | Repository name |
+| role_arn | Role ARN to get access to the registry |
+| role_name | Role name to get access to the registry |
 
 
 
@@ -113,11 +118,11 @@ Check out these related projects.
 
 File a GitHub [issue](https://github.com/cloudposse/terraform-aws-kops-ecr/issues), send us an [email][email] or join our [Slack Community][slack].
 
-## Commerical Support
+## Commercial Support
 
 Work directly with our team of DevOps experts via email, slack, and video conferencing. 
 
-We provide *commercial support* for all of our [Open Source][github] projects. As a *Dedicated Support* customer, you have access to our team of subject matter experts at a fraction of the cost of a fulltime engineer. 
+We provide [*commercial support*][commercial_support] for all of our [Open Source][github] projects. As a *Dedicated Support* customer, you have access to our team of subject matter experts at a fraction of the cost of a full-time engineer. 
 
 [![E-Mail](https://img.shields.io/badge/email-hello@cloudposse.com-blue.svg)](mailto:hello@cloudposse.com)
 
@@ -127,7 +132,7 @@ We provide *commercial support* for all of our [Open Source][github] projects. A
 - **Bug Fixes.** We'll rapidly work to fix any bugs in our projects.
 - **Build New Terraform Modules.** We'll develop original modules to provision infrastructure.
 - **Cloud Architecture.** We'll assist with your cloud strategy and design.
-- **Implementation.** We'll provide hands on support to implement our reference architectures. 
+- **Implementation.** We'll provide hands-on support to implement our reference architectures. 
 
 
 ## Community Forum
@@ -185,6 +190,13 @@ See [LICENSE](LICENSE) for full details.
     under the License.
 
 
+
+
+
+
+
+
+
 ## Trademarks
 
 All other trademarks referenced herein are the property of their respective owners.
@@ -204,6 +216,7 @@ Check out [our other projects][github], [apply for a job][jobs], or [hire us][hi
   [docs]: https://docs.cloudposse.com/
   [website]: https://cloudposse.com/
   [github]: https://github.com/cloudposse/
+  [commercial_support]: https://github.com/orgs/cloudposse/projects
   [jobs]: https://cloudposse.com/jobs/
   [hire]: https://cloudposse.com/contact/
   [slack]: https://slack.cloudposse.com/
