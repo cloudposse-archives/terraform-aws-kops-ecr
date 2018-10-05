@@ -19,6 +19,12 @@ variable "delimiter" {
   description = "Delimiter to be used between `namespace`, `stage`, `name` and `attributes`"
 }
 
+variable "use_fullname" {
+  type        = "string"
+  default     = "true"
+  description = "Set 'true' to use `cp-prod-bastion_image` for ecr repository name, else `bastion_image`"
+}
+
 variable "attributes" {
   type        = "list"
   default     = []

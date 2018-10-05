@@ -69,8 +69,9 @@ module "kops_ecr_app" {
 ```
 Available targets:
 
-  help                                This help screen
+  help                                Help screen
   help/all                            Display help for all targets
+  help/short                          This help short screen
   lint                                Lint terraform code
 
 ```
@@ -88,6 +89,7 @@ Available targets:
 | nodes_name | Kops nodes subdomain name in the cluster DNS zone | string | `nodes` | no |
 | stage | Stage (e.g. `prod`, `dev`, `staging`) | string | - | yes |
 | tags | Additional tags (e.g. map(`Cluster`,`us-west-2.cloudposse.co`) | map | `<map>` | no |
+| use_fullname | Set 'true' to use `cp-prod-bastion_image` for ecr repository name, else `bastion_image` | string | `true` | no |
 | users | User names to grant permissions | list | `<list>` | no |
 
 ## Outputs
