@@ -16,10 +16,11 @@ module "kops_metadata" {
 }
 
 module "kops_ecr" {
-  source    = "git::https://github.com/cloudposse/terraform-aws-ecr.git?ref=tags/0.2.8"
-  name      = "${var.name}"
-  namespace = "${var.namespace}"
-  stage     = "${var.stage}"
+  source       = "git::https://github.com/cloudposse/terraform-aws-ecr.git?ref=tags/0.2.11"
+  name         = "${var.name}"
+  namespace    = "${var.namespace}"
+  stage        = "${var.stage}"
+  use_fullname = "${var.use_fullname}"
 
   roles = [
     "${module.kops_metadata.masters_role_name}",

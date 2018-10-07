@@ -12,6 +12,7 @@
 | nodes_name | Kops nodes subdomain name in the cluster DNS zone | string | `nodes` | no |
 | stage | Stage (e.g. `prod`, `dev`, `staging`) | string | - | yes |
 | tags | Additional tags (e.g. map(`Cluster`,`us-west-2.cloudposse.co`) | map | `<map>` | no |
+| use_fullname | Set 'true' to use `namespace-stage-name` for ecr repository name, else `name` | string | `true` | no |
 | users | User names to grant permissions | list | `<list>` | no |
 
 ## Outputs
