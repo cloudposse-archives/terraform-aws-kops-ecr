@@ -16,7 +16,7 @@ module "kops_metadata" {
 }
 
 module "kops_ecr" {
-  source       = "git::https://github.com/cloudposse/terraform-aws-ecr.git?ref=feature/cp-12/allow-to-use-direct-repository-name"
+  source       = "git::https://github.com/cloudposse/terraform-aws-ecr.git?tags/0.2.11"
   name         = "${var.name}"
   namespace    = "${var.namespace}"
   stage        = "${var.stage}"

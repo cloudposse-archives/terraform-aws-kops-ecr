@@ -22,7 +22,7 @@ variable "delimiter" {
 variable "use_fullname" {
   type        = "string"
   default     = "true"
-  description = "Set 'true' to use `cp-prod-bastion_image` for ecr repository name, else `bastion_image`"
+  description = "Set 'true' to use `namespace-stage-name` for ecr repository name, else `name`"
 }
 
 variable "attributes" {
