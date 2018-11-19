@@ -54,8 +54,8 @@ variable "nodes_name" {
   description = "Kops nodes subdomain name in the cluster DNS zone"
 }
 
-variable "users" {
+variable "roles" {
   type        = "list"
   default     = []
-  description = "User names to grant permissions"
+  description = "Roles name to grant docker registry login/read/write permissions"
 }

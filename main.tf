@@ -28,23 +28,23 @@ module "kops_ecr" {
   ]
 }
 
-resource "aws_iam_policy_attachment" "login" {
-  count      = "${signum(length(var.users))}"
+resource "aws_iam_role_policy_attachment" "login" {
+  count      = "${signum(length(var.roles))}"
   name       = "${module.label.id}"
-  users      = ["${var.users}"]
+  role       = ["${var.roles}"]
   policy_arn = "${module.kops_ecr.policy_login_arn}"
 }
 
-resource "aws_iam_policy_attachment" "read" {
-  count      = "${signum(length(var.users))}"
+resource "aws_iam_role_policy_attachment" "read" {
+  count      = "${signum(length(var.roles))}"
   name       = "${module.label.id}"
-  users      = ["${var.users}"]
+  role       = ["${var.roles}"]
   policy_arn = "${module.kops_ecr.policy_read_arn}"
 }
 
-resource "aws_iam_policy_attachment" "write" {
-  count      = "${signum(length(var.users))}"
+resource "aws_iam_role_policy_attachment" "write" {
+  count      = "${signum(length(var.roles))}"
   name       = "${module.label.id}"
-  users      = ["${var.users}"]
+  role       = ["${var.roles}"]
   policy_arn = "${module.kops_ecr.policy_write_arn}"
 }
