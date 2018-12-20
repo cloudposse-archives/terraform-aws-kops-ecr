@@ -21,12 +21,12 @@ module "kops_ecr" {
   namespace    = "${var.namespace}"
   stage        = "${var.stage}"
   use_fullname = "${var.use_fullname}"
+}
 
-  roles = [
+/*  roles = [
     "${module.kops_metadata.masters_role_name}",
     "${module.kops_metadata.nodes_role_name}",
-  ]
-}
+  ]*/
 
 resource "aws_iam_policy_attachment" "login" {
   count      = "${signum(length(var.users))}"
