@@ -24,7 +24,7 @@ module "kops_ecr" {
 
   principal = [ "${var.principal}" ]
 
-  principal_only = [
+  principal_readonly = [
     "${module.kops_metadata.masters_role_arn}",
     "${module.kops_metadata.nodes_role_arn}",
   ]
