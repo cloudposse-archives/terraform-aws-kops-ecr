@@ -22,10 +22,10 @@ module "kops_ecr" {
   stage        = "${var.stage}"
   use_fullname = "${var.use_fullname}"
 
-  roles = [ "${var.roles}" ]
+  principal = [ "${var.principal}" ]
 
-  roles_only = [
-    "${module.kops_metadata.masters_role_name}",
-    "${module.kops_metadata.nodes_role_name}",
+  principal_only = [
+    "${module.kops_metadata.masters_role_arn}",
+    "${module.kops_metadata.nodes_role_arn}",
   ]
 }

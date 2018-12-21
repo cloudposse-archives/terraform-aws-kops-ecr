@@ -54,8 +54,8 @@ variable "nodes_name" {
   description = "Kops nodes subdomain name in the cluster DNS zone"
 }
 
-variable "roles" {
+variable "principal" {
   type        = "list"
   default     = []
-  description = "Roles names to grant permissions"
+  description = "Principal ARN to grant permissions"
 }
