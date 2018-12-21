@@ -22,7 +22,7 @@ module "kops_ecr" {
   stage        = "${var.stage}"
   use_fullname = "${var.use_fullname}"
 
-  # principal = [ "${var.principal}" ]
+  principal = [ "${var.principal}" ]
 
   principal_readonly = [
     "${module.kops_metadata.masters_role_arn}",
